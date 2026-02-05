@@ -62,8 +62,7 @@ export default function TransitionView({
 				</h2>
 				<div className='h-px w-24 bg-white/20 mt-4'></div>
 				<span className='text-white/40 text-sm font-mono mt-2 capitalize'>
-					{UI_TEXT[lang].enter_age}{" "}
-					{lang === "ru" ? AGES_RU[nextAge] : nextAge} ...
+					{UI_TEXT[lang].enter_age} {lang === "ru" ? AGES_RU[nextAge] : nextAge} ...
 				</span>
 			</div>
 		</div>

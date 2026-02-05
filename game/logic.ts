@@ -1,4 +1,4 @@
-import { GameState, PlayerStats, Scenario, AgeRange, Option } from "@/types"
+import { GameState, PlayerStats, Scenario, AgeRange, Option, Condition } from "@/types"
 import { getScenarios } from "@/data/scenarios"
 
 const INITIAL_STATS: PlayerStats = {
@@ -23,7 +23,7 @@ const getAgeForStep = (stepIndex: number): AgeRange => {
 }
 
 // Check if a result is unlocked based on requirements (for scenarios OR options)
-export const isUnlocked = (reqs: any[] | undefined, state: GameState): boolean => {
+export const isUnlocked = (reqs: Condition[] | undefined, state: GameState): boolean => {
 	if (!reqs || reqs.length === 0) return true
 	return reqs.every((req) => {
 		if (req.stat) {

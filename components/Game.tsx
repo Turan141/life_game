@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GameState } from "@/types"
+import { GameState, Scenario } from "@/types"
 import {
 	initializeGame,
 	getNextScenario,
@@ -21,7 +21,7 @@ export default function Game() {
 	const [transitionNextAge, setTransitionNextAge] = useState("")
 	const [pendingState, setPendingState] = useState<{
 		state: GameState
-		scenario: any
+		scenario: Scenario
 	} | null>(null)
 
 	// Initial load

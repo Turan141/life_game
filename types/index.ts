@@ -47,5 +47,5 @@ export type GameState = {
 	currentScenario: Scenario | null
 	isPlaying: boolean
 	isGameOver: boolean
-    language: "en" | "ru"
+	language: "en" | "ru"
 }
