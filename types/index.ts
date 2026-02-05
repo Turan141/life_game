@@ -30,6 +30,7 @@ export type Scenario = {
 	id: string
 	ageRange: AgeRange
 	description: string
+	image?: string // Path to image (e.g. "/images/childhood_toy.jpg")
 	options: Option[]
 	tags?: string[]
 	weight?: number

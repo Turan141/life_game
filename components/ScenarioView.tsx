@@ -193,9 +193,24 @@ export default function ScenarioView({
 				</div>
 
 				{/* Scenario Description - Min height to prevent jump */}
-				<div className='w-full min-h-[160px] flex items-center justify-center mb-12'>
+				<div className='w-full min-h-[160px] flex flex-col items-center justify-center mb-12 gap-8'>
+					{/* Scenario Image if exists */}
+					{scenario.image && (
+						<div
+							className={`relative w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-2xl mb-4 border border-white/10
+                            transition-all duration-1000 ease-out delay-75
+                            ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+						>
+							<img
+								src={scenario.image}
+								alt='Scenario visualization'
+								className='w-full h-full object-cover'
+							/>
+							<div className='absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent' />
+						</div>
+					)}
 					<h2
-						className={`text-2xl md:text-3xl lg:text-4xl font-light text-center leading-relaxed text-white drop-shadow-lg transition-all duration-1000 delay-100 ease-out fill-mode-forwards ${isMounted ? "opacity-100 blur-0 translate-y-0" : "opacity-0 blur-sm translate-y-8"}`}
+						className={`text-xl md:text-2xl lg:text-3xl font-light text-center leading-relaxed text-slate-200 drop-shadow-lg transition-all duration-1000 delay-100 ease-out fill-mode-forwards max-w-2xl ${isMounted ? "opacity-100 blur-0 translate-y-0" : "opacity-0 blur-sm translate-y-8"}`}
 					>
 						{scenario.description}
 					</h2>
